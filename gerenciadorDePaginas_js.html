@@ -33,6 +33,7 @@
       case "paginaBolsaMoradia": 
                               // Carrega a página resumosDosCasos.html, armazenada no cache do frontend,
                               // no elemento de id "conteudo" da página index.html (SPA)
+                              await esperar( 5000 );
                               document.getElementById("conteudo").innerHTML = cachePaginaBolsaMoradia;  
 
                               // Configura a página de resumos dos casos
