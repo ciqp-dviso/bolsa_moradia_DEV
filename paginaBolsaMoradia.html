@@ -5,8 +5,6 @@
   <nav class="navbar bg-body-tertiary mt-2">
     <div class="container-fluid justify-content-start">
       <button id="botaoGravarNovoCasoSuperior" class="btn btn-sm btn-outline-secondary me-4" type="button">GRAVAR NOVO CASO</button>      
-      <button id="botaoGravarEdicaoDeCasoSuperior" class="btn btn-sm btn-outline-secondary me-4" type="button">GRAVAR EDIÇÃO DE CASO</button>
-      <button id="botaoFecharCasoSuperior" class="btn btn-sm btn-outline-secondary me-4" type="button">FECHAR</button>
     </div>
   </nav>
   <!-- Nav - Botões Superiores Gravar Edição de Caso e Fechar - Fim -->
@@ -14,19 +12,20 @@
 
 
 
-  <!-- Main - Parte principal da tela de Edição de Caso - Início -->
-  <main id="telaEdicaoCasos" class="container">     
+  <!-- Main - Parte principal da página Bolsa Moradia - Início -->
+  <main id="paginaBolsaMoradia" class="container">     
 
     <!-- Cabeçalho -->
     <section class="row">
       <h3 class="text-center mt-4 mb-4" id="tituloPagina"></h3>    
     </section>
 
-    <!-- RF -->
+    <!-- CPF -->
     <section class="row">  
       <div class="col-md-4 mb-3">
-        <label for="referenciaFamiliarInput" class="form-label fw-bold">REFERÊNCIA FAMILIAR</label>
-        <input type="text" class="form-control" id="referenciaFamiliarInput">
+        <label for="cpfInput" class="form-label fw-bold">PESQUISA CIDADÃO</label>
+        <input type="text" class="form-control" id="cpfInput" placeholder="Digite o CPF" maxlength="14">
+        <button type="button" class="btn btn-primary" id="cpfBtn" onclick="pesquisaCidadaoFE()">Pesquisar</button> 
       </div>
     </section>  
 
@@ -190,8 +189,6 @@
   <nav class="navbar bg-body-tertiary mt-2 mb-4">
     <div class="container-fluid justify-content-start">
       <button id="botaoGravarNovoCasoInferior" class="btn btn-sm btn-outline-secondary me-4" type="button">GRAVAR NOVO CASO</button>            
-      <button id="botaoGravarEdicaoDeCasoInferior" class="btn btn-sm btn-outline-secondary me-4" type="button">GRAVAR EDIÇÃO DE CASO</button>
-      <button id="botaoFecharCasoInferior" class="btn btn-sm btn-outline-secondary me-4" type="button">FECHAR</button>
     </div>
   </nav>
   <!-- Nav - Botões Inferiores Gravar Edição de Caso e Fechar - Fim -->  
