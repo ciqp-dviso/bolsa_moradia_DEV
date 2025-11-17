@@ -24,12 +24,11 @@
     <section class="row">  
       <div class="col-md-4 mb-3">
         <label for="cpfInput" class="form-label fw-bold">PESQUISA CIDADÃO</label>
-        <input type="text" class="form-control" id="cpfInput" placeholder="Digite o CPF" maxlength="14">        
+        <div class="input-group">
+          <input type="text" class="form-control" id="cpfInput" placeholder="Digite o CPF" maxlength="14">        
+          <button type="button" class="btn btn-primary" id="cpfBtn" onclick="pesquisaCidadaoFE()">Pesquisar</button> 
+        </div>
       </div>
-      <div class="col-md-3 mb-3">
-        <button type="button" class="btn btn-primary" id="cpfBtn" onclick="pesquisaCidadaoFE()">Pesquisar</button> 
-      </div>
-
     </section>  
 
     <br><hr><br>          
