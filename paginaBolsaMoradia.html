@@ -94,7 +94,7 @@
 
       <div class="row mb-1">            
         <div class="col-md-10">
-          A pessoa encaminhada apresenta condições mínimas de autonomia para administração do benefício e da moradia?
+          <b>A pessoa encaminhada apresenta condições mínimas de autonomia para administração do benefício e da moradia?</b>
         </div>      
       </div>    
       <div class="row mb-5">            
@@ -132,10 +132,12 @@
       
     </section>
 
+    <br><hr><br>          
 
     <!-- Dados do beneficiário -->
     <section>
 
+      <!-- Linha 1 - dados beneficiário -->
       <div class="row mb-1">       
         <div class="col-md-5">
           <label for="nomeBeneficiarioInput" class="form-label fw-bold">NOME COMPLETO BENEFICIÁRIO/BENEFICIÁRIA</label>
@@ -157,6 +159,8 @@
         <div class="col-md-3"></div>
       </div>       
 
+
+      <!-- Linha 2 - dados beneficiário -->       
       <div class="row mb-1">       
         <div class="col-md-5">
           <label for="dataNascimentoInput" class="form-label fw-bold">DATA DE NASCIMENTO DO BENEFICIÁRIO/BENEFICIÁRIA</label>
@@ -173,8 +177,36 @@
         </div>              
         <div class="col-md-3"></div>
         <div class="col-md-2">
-          <select class="form-select" id="orgaoEncaminhadorSelect">
+          <select class="form-select" id="racaCorInput">
             <?!= gerarSelect( BUFFER_RACAS_CORES ); ?>
+          </select>
+        </div>              
+        <div class="col-md-5"></div>
+      </div>             
+
+
+      <!-- Linha 3 - dados beneficiário -->       
+      <div class="row mb-1">       
+        <div class="col-md-5">
+          <label for="generoBeneficiarioSelect" class="form-label fw-bold">QUAL GÊNERO AUTODECLARADO PELO BENEFICIÁRIO/BENEFICIÁRIA? CONFERIR COM DLGBT*</label>
+        </div>              
+        <div class="col-md-5">
+          <label for="orientacaoSexualBeneficiarioSelect" class="form-label fw-bold">QUAL A ORIENTAÇÃO SEXUAL DO BENEFICIÁRIO/BENEFICIÁRIA? CONFERIR COM DLGBT*
+</label>
+        </div>                
+        <div class="col-md-2"></div>                                              
+      </div>    
+  
+      <div class="row mb-3">            
+        <div class="col-md-2">
+          <select class="form-select" id="generoBeneficiarioSelect">
+            <?!= gerarSelect( BUFFER_IDENTIDADES_DE_GENERO ); ?>
+          </select>
+        </div>              
+        <div class="col-md-3"></div>
+        <div class="col-md-2">
+          <select class="form-select" id="orientacaoSexualBeneficiarioSelect">
+            <?!= gerarSelect( BUFFER_ORIENTACOES_SEXUAIS ); ?>
           </select>
         </div>              
         <div class="col-md-5"></div>
