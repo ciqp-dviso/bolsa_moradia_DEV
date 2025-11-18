@@ -28,14 +28,39 @@
         <label for="cpfInput" class="form-label fw-bold">PESQUISA CIDADÃO</label>
         <div class="input-group">
           <input type="text" class="form-control" id="cpfInput" placeholder="Digite o CPF" maxlength="14">        
-          <button type="button" class="btn btn-primary" id="cpfBtn" onclick="pesquisaCidadaoFE()">Pesquisar</button> 
+          <button type="button" class="btn btn-primary" id="cpfButton" onclick="pesquisaCidadaoFE()">Pesquisar</button> 
         </div>
       </div>
     </section>  
 
-    <br><hr><br>          
+    <br><hr><br>      
+    
+    <!-- Dados do encaminhamento - Parte 1 -->
+    <section class="row">            
+      <div class="col-md-3 mb-3">
+        <label for="nomeTecnicoInput" class="form-label fw-bold">NOME DO TÉCNICO RESPONÁVEL PELO ENCAMINHAMENTO</label>
+        <input type="text" class="form-control" id="nomeTecnicoInput">
+      </div>                                                  
 
-    <!-- Endereço parte 1 -->
+      <div class="col-md-3 mb-3">
+        <label for="emailTecnicoInput" class="form-label fw-bold">E-MAIL DO TÉCNICO RESPONÁVEL PELO ENCAMINHAMENTO</label>
+        <input type="text" class="form-control" id="emailTecnicoInput">
+      </div>                                                              
+    </section>    
+
+    <!-- Dados do encaminhamento - Parte 2 -->
+    <section class="row">  
+      <div class="col-md-3 mb-3">
+        <label for="orgaoEncaminhadorSelect" class="form-label fw-bold">ÓRGÃO ENCAMINHADOR</label>
+        <select class="form-select" id="orgaoEncaminhadorSelect">
+          <?!= gerarSelectBackend( BUFFER_ORGAOS_ENCAMINHADORES ); ?>
+        </select>
+      </div>             
+    </section>        
+
+    <br><hr><br>
+
+    <!-- Dados Cidadão -->
     <section class="row">          
       <div class="col-md-2 mb-3">
         <label for="tipoLogradouroInput" class="form-label fw-bold">TIPO DE LOGRADOURO</label>
