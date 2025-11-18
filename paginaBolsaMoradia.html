@@ -104,7 +104,10 @@
         </div>      
       </div>          
 
-      <div class="row mb-2">            
+      <div class="row mb-1">       
+        <div class="col-md-4">
+          <label for="orgaoEncaminhadorSelect" class="form-label fw-bold">ÓRGÃO ENCAMINHADOR</label>
+        </div>
         <div class="col-md-4">
           <label for="nomeTecnicoInput" class="form-label fw-bold">NOME DO TÉCNICO RESPONÁVEL PELO ENCAMINHAMENTO</label>
         </div>              
@@ -113,26 +116,20 @@
         </div>                                                              
       </div>    
   
-      <div class="row  mb-3">            
-        <div class="col-md-4">
-          <input type="text" class="form-control" id="nomeTecnicoInput">
-        </div>                                                  
-
-        <div class="col-md-4">
-          <input type="text" class="form-control" id="emailTecnicoInput">
-        </div>                                                              
-
-      </div>        
-      
-      <div class="row">  
-        <div class="col-md-3 mb-3">
-          <label for="orgaoEncaminhadorSelect" class="form-label fw-bold">ÓRGÃO ENCAMINHADOR</label>
+      <div class="row mb-3">            
+        <div class="col-md-4">          
           <select class="form-select" id="orgaoEncaminhadorSelect">
             <?!= gerarSelect( BUFFER_ORGAOS_ENCAMINHADORES ); ?>
           </select>
         </div>             
-      </div>              
-
+        <div class="col-md-4">
+          <input type="text" class="form-control" id="nomeTecnicoInput">
+        </div>              
+        <div class="col-md-4">
+          <input type="text" class="form-control" id="emailTecnicoInput">
+        </div>              
+      </div>        
+      
     </section>
 
     <br><hr><br>
