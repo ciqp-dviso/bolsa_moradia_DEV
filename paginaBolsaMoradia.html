@@ -90,35 +90,46 @@
     <br><hr><br>      
     
     <!-- Dados do encaminhamento - Parte 1 -->
-    <section class="row mb-2">            
-      <div class="col-md-6">
-        <label for="nomeTecnicoInput" class="form-label fw-bold">NOME DO TÉCNICO RESPONÁVEL PELO ENCAMINHAMENTO</label>
+    <section>
+
+      <div class="row mb-4">            
+        <div class="col-md-10">
+          A pessoa encaminhada apresenta condições mínimas de autonomia para administração do benefício e da moradia?
+        </div>      
+        <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+        <label class="form-check-label" for="checkDefault">Afirmo que sim</label>        
+      </div>    
+
+      <div class="row mb-2">            
+        <div class="col-md-6">
+          <label for="nomeTecnicoInput" class="form-label fw-bold">NOME DO TÉCNICO RESPONÁVEL PELO ENCAMINHAMENTO</label>
+        </div>              
+        <div class="col-md-6">
+          <label for="emailTecnicoInput" class="form-label fw-bold">E-MAIL DO TÉCNICO RESPONÁVEL PELO ENCAMINHAMENTO</label>
+        </div>                                                              
+      </div>    
+  
+      <div class="row  mb-3">            
+        <div class="col-md-4">
+          <input type="text" class="form-control" id="nomeTecnicoInput">
+        </div>                                                  
+        <div class="col-md-2"></div>                                                  
+        <div class="col-md-4">
+          <input type="text" class="form-control" id="emailTecnicoInput">
+        </div>                                                              
+        <div class="col-md-2"></div>                                                              
+      </div>        
+      
+      <div class="row">  
+        <div class="col-md-3 mb-3">
+          <label for="orgaoEncaminhadorSelect" class="form-label fw-bold">ÓRGÃO ENCAMINHADOR</label>
+          <select class="form-select" id="orgaoEncaminhadorSelect">
+            <?!= gerarSelect( BUFFER_ORGAOS_ENCAMINHADORES ); ?>
+          </select>
+        </div>             
       </div>              
-      <div class="col-md-6">
-        <label for="emailTecnicoInput" class="form-label fw-bold">E-MAIL DO TÉCNICO RESPONÁVEL PELO ENCAMINHAMENTO</label>
-      </div>                                                              
-    </section>    
 
-    <section class="row  mb-3">            
-      <div class="col-md-4">
-        <input type="text" class="form-control" id="nomeTecnicoInput">
-      </div>                                                  
-      <div class="col-md-2"></div>                                                  
-      <div class="col-md-4">
-        <input type="text" class="form-control" id="emailTecnicoInput">
-      </div>                                                              
-      <div class="col-md-2"></div>                                                              
-    </section>        
-
-    <!-- Dados do encaminhamento - Parte 2 -->
-    <section class="row">  
-      <div class="col-md-3 mb-3">
-        <label for="orgaoEncaminhadorSelect" class="form-label fw-bold">ÓRGÃO ENCAMINHADOR</label>
-        <select class="form-select" id="orgaoEncaminhadorSelect">
-          <?!= gerarSelect( BUFFER_ORGAOS_ENCAMINHADORES ); ?>
-        </select>
-      </div>             
-    </section>        
+    </section>
 
     <br><hr><br>
 
