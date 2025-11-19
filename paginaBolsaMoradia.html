@@ -264,7 +264,16 @@
         <p class="fw-bold">INSIRA A DECLARAÇÃO DA SUTE (Subsecretaria de Trabalho e Emprego) SOBRE A PARTICIPAÇÃO NO PROGRAMA ESTAMOS JUNTOS</p>
       </div>           
       
-                           
+                  
+      <!-- Linha 6 - dados beneficiário -->             
+      <div class="row mb-3">
+        <p class="fw-bold">A PESSOA CANDIDATA TEM HISTÓRICO DE INSTITUCIONALIZAÇÃO?</p>
+        <div id="institucionalizacaoCheckbox"">
+          <!-- 1: checkbox inline   -->
+          <!-- 0: checkbox vertical -->
+          <?!= gerarCheckBox( BUFFER_HISTORICO_INSTITUCIONALIZACAO, "institucionalizacaoCheckbox", 0 ); ?>
+        </div>    
+      </div>      
       
     </section>    
 
