@@ -88,12 +88,22 @@
         <div class="col-md-3">
           <label for="rendaIdentificadaInput" class="form-label fw-bold">RENDA IDENTIFICADA</label>
         </div>          
+        <div class="col-md-5"></div>
+        <div class="col-md-4">
+          <label for="numeroDeFamiliaresInput" class="form-label fw-bold">QUANTIDADE DE MEMBROS NA FAMÍLIA</label>
+        </div>                  
       </div>
+
       <div class="row mb-1">  
         <div class="col-md-2">
           <input type="text" class="form-control" id="rendaIdentificadaInput">
         </div>          
+        <div class="col-md-6"></div>
+        <div class="col-md-2">
+          <input type="text" class="form-control" id="numeroDeFamiliaresInput">
+        </div>                          
       </div>
+
       <div class="row mb-6">  
         <div class="col-md-6">
           <b>Fontes de renda: </b>BPC, Bolsa Família, Benefício Previdenciário, etc
@@ -292,6 +302,33 @@
         </div>              
         <div class="col-md-9"></div>
       </div>
+
+      <!-- Linha 8 - dados beneficiário -->
+      <div class="row mb-3">
+        <p class="fw-bold">NA COMPOSIÇÃO FAMILIAR, HÁ INDIVÍDUOS EM SITUAÇÃO DE AMEAÇA, CONFLITO TERRITORIAL OU OUTRAS VIOLÊNCIAS?</p>
+        <div id="violenciasFamiliaresCheckbox" onchange="mostrarCamposViolenciasFamiliares()">
+          <!-- 1: checkbox inline   -->
+          <!-- 0: checkbox vertical -->
+          <?!= gerarCheckBox( BUFFER_VIOLENCIAS, "violenciasFamiliaresCheckbox", 0 ); ?>
+        </div>    
+      </div>    
+
+      <div class="row mb-3" id="descricaoViolenciasFamiliares" style="display: none;">
+        <div class="col-md-10">
+          <label for="descricaoViolenciasFamiliaresTextArea" class="form-label fw-bold">FAÇA UMA BREVE DESCRIÇÃO DA SITUAÇÃO DE AMEAÇA, CONFLITO TERRITORIAL OU OUTRAS VIOLÊNCIAS</label>
+          <textarea class="form-control" id="descricaoViolenciasFamiliaresTextArea" rows="4" cols="50" maxlength="200" placeholder="Digite aqui a breve descrição"></textarea>
+        </div>        
+      </div>   
+
+      <!-- Linha 9 - dados beneficiário -->
+      <div class="row mb-3">
+        <p class="fw-bold">O(A) BENEFICIÁRIO(A) OU ALGUÉM DA FAMÍLIA ESTÁ EM SITUAÇÃO DE PROSTITUIÇÃO?</p>
+        <div id="prostituicaoCheckbox">
+          <!-- 1: checkbox inline   -->
+          <!-- 0: checkbox vertical -->
+          <?!= gerarCheckBox( BUFFER_RESPOSTAS_SIMPLES, "prostituicaoCheckbox", 0 ); ?>
+        </div>    
+      </div>                       
       
     </section>    
 
@@ -347,33 +384,6 @@
             <?!= gerarCheckBox( BUFFER_RESPOSTAS_SIMPLES, "estamosJuntosFamiliaresCheckbox", 0 ); ?>
           </div>    
         </div>            
-        
-        <!-- Linha 4 - perfil outros familiares -->     
-        <div class="row mb-3">
-          <p class="fw-bold">NA COMPOSIÇÃO FAMILIAR, HÁ INDIVÍDUOS EM SITUAÇÃO DE AMEAÇA, CONFLITO TERRITORIAL OU OUTRAS VIOLÊNCIAS?</p>
-          <div id="violenciasFamiliaresCheckbox" onchange="mostrarCamposViolenciasFamiliares()">
-            <!-- 1: checkbox inline   -->
-            <!-- 0: checkbox vertical -->
-            <?!= gerarCheckBox( BUFFER_VIOLENCIAS, "violenciasFamiliaresCheckbox", 0 ); ?>
-          </div>    
-        </div>    
-
-        <div class="row mb-3" id="descricaoViolenciasFamiliares" style="display: none;">
-          <div class="col-md-10">
-            <label for="descricaoViolenciasFamiliaresTextArea" class="form-label fw-bold">FAÇA UMA BREVE DESCRIÇÃO DA SITUAÇÃO DE AMEAÇA, CONFLITO TERRITORIAL OU OUTRAS VIOLÊNCIAS</label>
-            <textarea class="form-control" id="descricaoViolenciasFamiliaresTextArea" rows="4" cols="50" maxlength="200" placeholder="Digite aqui a breve descrição"></textarea>
-          </div>        
-        </div>   
-
-        <!-- Linha 5 - perfil outros familiares -->     
-        <div class="row mb-3">
-          <p class="fw-bold">O(A) BENEFICIÁRIO(A) OU ALGUÉM DA FAMÍLIA ESTÁ EM SITUAÇÃO DE PROSTITUIÇÃO?</p>
-          <div id="prostituicaoCheckbox">
-            <!-- 1: checkbox inline   -->
-            <!-- 0: checkbox vertical -->
-            <?!= gerarCheckBox( BUFFER_RESPOSTAS_SIMPLES, "prostituicaoCheckbox", 0 ); ?>
-          </div>    
-        </div>                 
 
       </div>       
 
