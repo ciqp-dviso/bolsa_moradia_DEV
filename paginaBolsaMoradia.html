@@ -227,62 +227,7 @@
         <div class="col-md-5"></div>
       </div>
       
-
-      <!-- Linha 4 - dados beneficiário -->             
-      <div class="row">
-        <p class="fw-bold">O BENEFICIÁRIO/BENEFICIÁRIA ESTÁ VINCULADO(A) AO TRABALHO FORMAL, GRUPOS PRODUTIVOS, ASSOCIAÇÕES E COOPERATIVAS?</p>
-        <div id="tipoTrabalhoCheckbox" onchange="mostrarCamposTrabalho()">
-          <!-- 1: checkbox inline   -->
-          <!-- 0: checkbox vertical -->
-          <?!= gerarCheckBox( BUFFER_TIPOS_DE_TRABALHO, "tipoTrabalhoCheckbox", 0 ); ?>
-        </div>    
-      </div>                     
-      
-      <div class="row mb-3" id="docTrabalhoFormal" style="display: none;">
-        <p class="fw-bold">INSIRA O DOCUMENTO QUE COMPROVE O TRABALHO FORMAL</p>
-      </div>                           
-
-      <div class="row mb-3" id="descricaoTrabalhoInformal" style="display: none;">
-        <div class="col-md-10">
-          <label for="descricaoTrabalhoInformalTextArea" class="form-label fw-bold">CASO O(A) BENEFICIÁRIO/BENEFICIÁRIA EXERÇA TRABALHO INFORMAL, FAÇA UMA BREVE DESCRIÇÃO</label>
-          <textarea class="form-control" id="descricaoTrabalhoInformalTextArea" rows="4" cols="50" maxlength="200" placeholder="Digite aqui a breve descrição"></textarea>
-        </div>        
-      </div>           
-      
-
-      <!-- Linha 5 - dados beneficiário -->             
-      <div class="row">
-        <p class="fw-bold">O BENEFICIÁRIO/BENEFICIÁRIA É PARTICIPANTE DO PROGRAMA ESTAMOS JUNTOS, SEJA INSERIDO NAS FRENTES DE TRABALHO OU OPORTUNIDADE CLT?</p>
-        <div id="estamosJuntosCheckbox" onchange="mostrarCampoEstamosJuntos()">
-          <!-- 1: checkbox inline   -->
-          <!-- 0: checkbox vertical -->
-          <?!= gerarCheckBox( BUFFER_RESPOSTAS_SIMPLES, "estamosJuntosCheckbox", 0 ); ?>
-        </div>    
-      </div>            
-      
-      <div class="row mb-3" id="docEstamosJuntos" style="display: none;">
-        <p class="fw-bold">INSIRA A DECLARAÇÃO DA SUTE (Subsecretaria de Trabalho e Emprego) SOBRE A PARTICIPAÇÃO NO PROGRAMA ESTAMOS JUNTOS</p>
-      </div>           
-      
-
-      <!-- Linha 6 - dados beneficiário -->             
-      <div class="row">
-        <p class="fw-bold">A PESSOA CANDIDATA TEM HISTÓRICO DE INSTITUCIONALIZAÇÃO?</p>
-        <div id="institucionalizacaoCheckbox"">
-          <!-- 1: checkbox inline   -->
-          <!-- 0: checkbox vertical -->
-          <?!= gerarCheckBox( BUFFER_HISTORICO_INSTITUCIONALIZACAO, "institucionalizacaoCheckbox", 0 ); ?>
-        </div>    
-      </div>                               
-      
-
-      <!-- Linha 7 - dados beneficiário -->             
-      <div class="row">
-        <p class="fw-bold">A PESSOA CANDIDATA TEM ALGUMA DAS CONDIÇÕES DE SAÚDE LISTADAS ABAIXO?</p>        
-        <select class="form-select" id="selectRegionais">
-          <?!= gerarSelect( BUFFER_QUANTIDADE_PROBLEMAS_DE_SAUDE ); ?>
-        </select>        
-      </div>                                     
+                           
       
     </section>    
 
