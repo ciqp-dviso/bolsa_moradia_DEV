@@ -2,12 +2,69 @@
 
   "use strict";
 
+  /**
+   * Função que configura a página do bolsa moradia
+   */
   function configurarPaginaBolsaMoradia() {
 
     // Configura o Título da Página
     document.getElementById( "tituloPagina" ).innerHTML = "BOLSA MORADIA - FORMULÁRIO DE ENCAMINHAMENTO";
 
-  }
+  } // Fim da função configurarPaginaBolsaMoradia
+
+
+  /**
+   * Função para mostrar os campos referentes às opções
+   * selecionadas no checkbox tipoTrabalhoCheckbox
+   */
+  function mostrarCamposTrabalho() {
+    
+    // Reset nos displays dos campos
+    document.getElementById( "docTrabalhoFormal" ).style.display = "none";
+    document.getElementById( "descricaoTrabalhoInformal" ).style.display = "none";
+    
+    // Ids dos tipos de trabalhos selecionados no checkbox tipoTrabalhoCheckbox      
+    const tipoTrabalhoCheckbox = document.querySelectorAll('input[name="tipoTrabalhoCheckbox"]:checked');
+    const arrayIdsTipoTrabalho = Array.from(tipoTrabalhoCheckbox).map(chk => chk.value);
+
+    // Se algum checkbox dos tipos de trabalhos tiver sido selecionado
+    if( arrayIdsTipoTrabalho.length ) {
+
+      arrayIdsTipoTrabalho.forEach( item => {
+        
+        if(item == "4") document.getElementById( "docTrabalhoFormal" ).style.display = "";
+        if(item == "5") document.getElementById( "descricaoTrabalhoInformal" ).style.display = "";
+
+      }); 
+    }
+
+  } // Fim da função mostrarCamposTrabalho
+
+
+  /**
+   * Função para mostrar o campo referente à opção
+   * selecionada no checkbox estamosJuntosCheckbox
+   */
+  function mostrarCampoEstamosJuntos() {
+    
+    // Reset nos displays dos campos
+    document.getElementById( "docEstamosJuntos" ).style.display = "none";    
+    
+    // Ids dos tipos de trabalhos selecionados no checkbox tipoTrabalhoCheckbox      
+    const estamosJuntosCheckbox = document.querySelectorAll('input[name="estamosJuntosCheckbox"]:checked');
+    const arrayIdsEstamosJuntos = Array.from(estamosJuntosCheckbox).map(chk => chk.value);
+
+    // Se algum checkbox dos tipos de trabalhos tiver sido selecionado
+    if( arrayIdsEstamosJuntos.length ) {
+
+      arrayIdsEstamosJuntos.forEach( item => {
+        
+        if(item == "1") document.getElementById( "docEstamosJuntos" ).style.display = "";        
+
+      }); 
+    }
+
+  } // Fim da função mostrarCampoEstamosJuntos
 
 
 </script>

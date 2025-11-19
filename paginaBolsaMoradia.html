@@ -1,13 +1,13 @@
-<!-- Tela Edição de Caso - Início -->
+<!-- Página Bolsa Moradia - Início -->
 
 
-  <!-- Nav - Botões Superiores Gravar Edição de Caso e Fechar - Início -->
+  <!-- Nav - Botões Superiores Gravar Novo Encaminhamento - Início -->
   <nav class="navbar bg-body-tertiary mt-2">
     <div class="container-fluid justify-content-start">
       <button id="botaoGravarNovoEncaminhamentoSuperior" class="btn btn-sm btn-outline-secondary me-4" type="button">GRAVAR NOVO ENCAMINHAMENTO</button>      
     </div>
   </nav>
-  <!-- Nav - Botões Superiores Gravar Edição de Caso e Fechar - Fim -->
+  <!-- Nav - Botões Superiores Gravar Novo Encaminhamento - Fim -->
 
 
 
@@ -33,7 +33,22 @@
       </div>
     </section>  
 
-    <br><hr><br>      
+    <br><hr><br>
+    
+    <section class="row" id="mensagemCADUNICO" style="display: none;">    
+      <p class="lead">
+          A pessoa pesquisada ou não foi localizada na base do CADÚNICO de Setembro/25 ou foi localizada, porém
+          possuem em seu registro informações que descumprem os critérios de elegibilidade. Nesse caso é recomendado que seja
+          realizada consulta ao CADÚNICO e verificado:<br/>
+          1) O cadastro é da cidade de Belo Horizonte;<br/>
+          2) O cadastro tem menos de 2 anos da última atualização; <br/>
+          3) Consta no cadastro que essa pessoa está em situação de rua <br />
+          Atendidos todos os critérios acima, emita a folha resumo e faça o upload no botão abaixo, para continuar o preenchimento
+          do formulário.
+        </p>
+        <br><hr><br>
+    </section>
+        
     
     <!-- Dados do CAD Único - Parte 1 -->
     <section> 
@@ -210,28 +225,79 @@
           </select>
         </div>              
         <div class="col-md-5"></div>
-      </div>             
+      </div>
       
+
+      <!-- Linha 4 - dados beneficiário -->             
+      <div class="row">
+        <p class="fw-bold">O BENEFICIÁRIO/BENEFICIÁRIA ESTÁ VINCULADO(A) AO TRABALHO FORMAL, GRUPOS PRODUTIVOS, ASSOCIAÇÕES E COOPERATIVAS?</p>
+        <div id="tipoTrabalhoCheckbox" onchange="mostrarCamposTrabalho()">
+          <!-- 1: checkbox inline   -->
+          <!-- 0: checkbox vertical -->
+          <?!= gerarCheckBox( BUFFER_TIPOS_DE_TRABALHO, "tipoTrabalhoCheckbox", 0 ); ?>
+        </div>    
+      </div>                     
       
+      <div class="row mb-3" id="docTrabalhoFormal" style="display: none;">
+        <p class="fw-bold">INSIRA O DOCUMENTO QUE COMPROVE O TRABALHO FORMAL</p>
+      </div>                           
+
+      <div class="row mb-3" id="descricaoTrabalhoInformal" style="display: none;">
+        <div class="col-md-10">
+          <label for="descricaoTrabalhoInformalTextArea" class="form-label fw-bold">CASO O(A) BENEFICIÁRIO/BENEFICIÁRIA EXERÇA TRABALHO INFORMAL, FAÇA UMA BREVE DESCRIÇÃO</label>
+          <textarea class="form-control" id="descricaoTrabalhoInformalTextArea" rows="4" cols="50" maxlength="200" placeholder="Digite aqui a breve descrição"></textarea>
+        </div>        
+      </div>           
+      
+
+      <!-- Linha 5 - dados beneficiário -->             
+      <div class="row">
+        <p class="fw-bold">O BENEFICIÁRIO/BENEFICIÁRIA É PARTICIPANTE DO PROGRAMA ESTAMOS JUNTOS, SEJA INSERIDO NAS FRENTES DE TRABALHO OU OPORTUNIDADE CLT?</p>
+        <div id="estamosJuntosCheckbox" onchange="mostrarCampoEstamosJuntos()">
+          <!-- 1: checkbox inline   -->
+          <!-- 0: checkbox vertical -->
+          <?!= gerarCheckBox( BUFFER_RESPOSTAS_SIMPLES, "estamosJuntosCheckbox", 0 ); ?>
+        </div>    
+      </div>            
+      
+      <div class="row mb-3" id="docEstamosJuntos" style="display: none;">
+        <p class="fw-bold">INSIRA A DECLARAÇÃO DA SUTE (Subsecretaria de Trabalho e Emprego) SOBRE A PARTICIPAÇÃO NO PROGRAMA ESTAMOS JUNTOS</p>
+      </div>           
+      
+
+      <!-- Linha 6 - dados beneficiário -->             
+      <div class="row">
+        <p class="fw-bold">A PESSOA CANDIDATA TEM HISTÓRICO DE INSTITUCIONALIZAÇÃO?</p>
+        <div id="institucionalizacaoCheckbox"">
+          <!-- 1: checkbox inline   -->
+          <!-- 0: checkbox vertical -->
+          <?!= gerarCheckBox( BUFFER_HISTORICO_INSTITUCIONALIZACAO, "institucionalizacaoCheckbox", 0 ); ?>
+        </div>    
+      </div>                               
+      
+
+      <!-- Linha 7 - dados beneficiário -->             
+      <div class="row">
+        <p class="fw-bold">A PESSOA CANDIDATA TEM ALGUMA DAS CONDIÇÕES DE SAÚDE LISTADAS ABAIXO?</p>        
+        <select class="form-select" id="selectRegionais">
+          <?!= gerarSelect( BUFFER_QUANTIDADE_PROBLEMAS_DE_SAUDE ); ?>
+        </select>        
+      </div>                                     
       
     </section>    
 
-    <br><hr><br>
+    <br><hr><br>         
+
+    <!-- Dados família -->
+    <section>
+
+
+    </section>
 
 
     
 
-    <!-- Violações Caso -->
-    <section class="row">
-      <p class="mt-3 fw-bold">VIOLAÇÕES DO CASO</p>
-      <div id="checkboxViolacoes">
-        <!-- 1: checkbox inline   -->
-        <!-- 0: checkbox vertical -->
-        
-      </div>    
-    </section>
 
-    <br><hr><br>        
 
      
 
@@ -239,16 +305,16 @@
   <!-- Main - Parte principal da tela Edição de Caso - Fim -->
 
 
-  <!-- Nav - Botões Inferiores Gravar Edição de Caso e Fechar - Início -->
+  <!-- Nav - Botões Inferiores Gravar Novo Encaminhamento - Início -->
   <nav class="navbar bg-body-tertiary mt-2 mb-4">
     <div class="container-fluid justify-content-start">
       <button id="botaoGravarNovoEncaminhamentoInferior" class="btn btn-sm btn-outline-secondary me-4" type="button">GRAVAR NOVO ENCAMINHAMENTO</button>            
     </div>
   </nav>
-  <!-- Nav - Botões Inferiores Gravar Edição de Caso e Fechar - Fim -->  
+  <!-- Nav - Botões Inferiores Gravar Novo Encaminhamento - Fim -->  
 
 
-<!-- Tela Edição de Caso - Fim -->
+<!-- Página Bolsa Moradia - Fim -->
 
 
   
