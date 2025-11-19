@@ -229,7 +229,7 @@
       
       
       <!-- Linha 4 - dados beneficiário -->             
-      <div class="row">
+      <div class="row mb-3">
         <p class="fw-bold">O BENEFICIÁRIO/BENEFICIÁRIA ESTÁ VINCULADO(A) AO TRABALHO FORMAL, GRUPOS PRODUTIVOS, ASSOCIAÇÕES E COOPERATIVAS?</p>
         <div id="tipoTrabalhoCheckbox" onchange="mostrarCamposTrabalho()">
           <!-- 1: checkbox inline   -->
@@ -247,7 +247,23 @@
           <label for="descricaoTrabalhoInformalTextArea" class="form-label fw-bold">CASO O(A) BENEFICIÁRIO/BENEFICIÁRIA EXERÇA TRABALHO INFORMAL, FAÇA UMA BREVE DESCRIÇÃO</label>
           <textarea class="form-control" id="descricaoTrabalhoInformalTextArea" rows="4" cols="50" maxlength="200" placeholder="Digite aqui a breve descrição"></textarea>
         </div>        
+      </div>   
+
+      
+      <!-- Linha 5 - dados beneficiário -->             
+      <div class="row mb-3">
+        <p class="fw-bold">O BENEFICIÁRIO/BENEFICIÁRIA É PARTICIPANTE DO PROGRAMA ESTAMOS JUNTOS, SEJA INSERIDO NAS FRENTES DE TRABALHO OU OPORTUNIDADE CLT?</p>
+        <div id="estamosJuntosCheckbox" onchange="mostrarCampoEstamosJuntos()">
+          <!-- 1: checkbox inline   -->
+          <!-- 0: checkbox vertical -->
+          <?!= gerarCheckBox( BUFFER_RESPOSTAS_SIMPLES, "estamosJuntosCheckbox", 0 ); ?>
+        </div>    
+      </div>            
+      
+      <div class="row mb-3" id="docEstamosJuntos" style="display: none;">
+        <p class="fw-bold">INSIRA A DECLARAÇÃO DA SUTE (Subsecretaria de Trabalho e Emprego) SOBRE A PARTICIPAÇÃO NO PROGRAMA ESTAMOS JUNTOS</p>
       </div>           
+      
                            
       
     </section>    
