@@ -277,15 +277,24 @@
 
 
       <!-- Linha 7 - dados beneficiário -->             
-      <div class="row">
-        <p class="fw-bold col-md-5">A PESSOA CANDIDATA TEM ALGUM PROBLEMA DE SAÚDE?</p>        
-      </div>                
+      <div class="row mb-1">       
+        <div class="col-md-5">
+          <label for="SaudeBeneficiarioSelect" class="form-label fw-bold">A PESSOA CANDIDATA TEM ALGUM PROBLEMA DE SAÚDE?</label>
+        </div>              
+        <div class="col-md-7"></div>                                              
+      </div>    
+  
+      <div class="row mb-3">            
+        <div class="col-md-2">
+          <select class="form-select" id="SaudeBeneficiarioSelect">
+            <?!= gerarSelect( BUFFER_QUANTIDADE_PROBLEMAS_DE_SAUDE ); ?>
+          </select>
+        </div>              
+        <div class="col-md-10"></div>
+      </div>
 
-      <div class="row mb-3">
-        <select class="form-select col-md-3" id="selectRegionais">
-          <?!= gerarSelect( BUFFER_QUANTIDADE_PROBLEMAS_DE_SAUDE ); ?>
-        </select>        
-      </div>                
+
+
       
     </section>    
 
