@@ -315,9 +315,19 @@
 
       </div>
 
-      <!-- Linha 2 - Dados Família (lista de familiares) -->      
+      <!-- Dados Família (perfil dos familiares) -->      
       <div class="row mb-5" id="dadosFamiliares" style="display: none;">
-        DADOS FAMILIARES
+        
+        <!-- Linha 6 - perfil outros familiares -->             
+        <div class="row mb-3">
+          <p class="fw-bold">SELECIONE AS SITUAÇÕES NAS QUAIS ALGUM OUTRO MEMBRO DA FAMÍLIA (EXCLUINDO O CANDIDATO/CANDIDATA) SE ENQUADRE:</p>
+          <div id="caracteristicasFamiliaresCheckbox">
+            <!-- 1: checkbox inline   -->
+            <!-- 0: checkbox vertical -->
+            <?!= gerarCheckBox( BUFFER_CARACTERISTICAS_OUTROS_CIDADAOS, "caracteristicasFamiliaresCheckbox", 0 ); ?>
+          </div>    
+        </div>      
+
       </div>       
 
     </section>
