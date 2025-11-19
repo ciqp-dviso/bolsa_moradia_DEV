@@ -274,6 +274,15 @@
           <?!= gerarCheckBox( BUFFER_HISTORICO_INSTITUCIONALIZACAO, "institucionalizacaoCheckbox", 0 ); ?>
         </div>    
       </div>      
+
+
+      <!-- Linha 7 - dados beneficiário -->             
+      <div class="row">
+        <p class="fw-bold">A PESSOA CANDIDATA TEM ALGUMA DAS CONDIÇÕES DE SAÚDE LISTADAS ABAIXO?</p>        
+        <select class="form-select" id="selectRegionais">
+          <?!= gerarSelect( BUFFER_QUANTIDADE_PROBLEMAS_DE_SAUDE ); ?>
+        </select>        
+      </div>                
       
     </section>    
 
