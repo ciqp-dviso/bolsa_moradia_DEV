@@ -2,6 +2,9 @@
 
   "use strict";
 
+  let NumeroDeFamiliares;
+
+
   /**
    * Função que configura a página do bolsa moradia
    */
@@ -9,6 +12,9 @@
 
     // Configura o Título da Página
     document.getElementById( "tituloPagina" ).innerHTML = "BOLSA MORADIA - FORMULÁRIO DE ENCAMINHAMENTO";
+
+    // Reset no número de familiares
+    NumeroDeFamiliares = 0;
 
   } // Fim da função configurarPaginaBolsaMoradia
 
@@ -65,6 +71,20 @@
     }
 
   } // Fim da função mostrarCampoEstamosJuntos
+
+
+  /**
+   * Função para adicionar um familiar
+   */
+  function adicionarFamiliar() {
+    
+
+    // Reset nos displays dos campos
+    document.getElementById( "dadosFamiliares" ).style.display = "";    
+    
+
+
+  } // Fim da função adicionarFamiliar
 
 
 </script>
