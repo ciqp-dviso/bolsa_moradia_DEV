@@ -130,6 +130,32 @@
   } // Fim da função adicionarFamiliar
 
 
+  /**
+   * Função para mostrar os campos referentes às opções
+   * selecionadas no checkbox violenciasFamiliaresCheckbox
+   */
+  function mostrarCamposViolenciasFamiliares() {
+    
+    // Reset nos displays dos campos
+    document.getElementById( "descricaoViolenciasFamiliares" ).style.display = "none";
+        
+    // Ids dos tipos de trabalhos selecionados no checkbox violenciasFamiliaresCheckbox      
+    const violenciasFamiliaresCheckbox = document.querySelectorAll('input[name="violenciasFamiliaresCheckbox"]:checked');
+    const arrayIdsViolenciasFamiliares = Array.from(violenciasFamiliaresCheckbox).map(chk => chk.value);
+
+    // Se algum checkbox dos tipos de trabalhos tiver sido selecionado
+    if( arrayIdsViolenciasFamiliares.length ) {
+
+      arrayIdsViolenciasFamiliares.forEach( item => {
+        
+        if(item != "1") document.getElementById( "descricaoViolenciasFamiliares" ).style.display = "";        
+
+      }); 
+    }
+
+  } // Fim da função mostrarCamposTrabalho
+
+
 </script>
 
 
