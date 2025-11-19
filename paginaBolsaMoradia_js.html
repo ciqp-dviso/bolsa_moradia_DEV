@@ -2,7 +2,7 @@
 
   "use strict";
 
-  let NumeroDeFamiliares;
+  let numeroDeFamiliares;
 
 
   /**
@@ -14,7 +14,7 @@
     document.getElementById( "tituloPagina" ).innerHTML = "BOLSA MORADIA - FORMULÁRIO DE ENCAMINHAMENTO";
 
     // Reset no número de familiares
-    NumeroDeFamiliares = 0;
+    numeroDeFamiliares = 0;
 
   } // Fim da função configurarPaginaBolsaMoradia
 
@@ -81,7 +81,50 @@
 
     // Reset nos displays dos campos
     document.getElementById( "dadosFamiliares" ).style.display = "";    
+
+    ++numeroDeFamiliares;
     
+    let familiar = `
+
+        <!-- Familiar ${numeroDeFamiliares} - Início -->
+        <div class="mb-3" id="familiar_1">
+          <div class="row mb-1">       
+            <div class="col-md-5">
+              <label for="nomeFamiliarInput_${numeroDeFamiliares}" class="form-label fw-bold">NOME COMPLETO</label>
+            </div>              
+            <div class="col-md-1">
+              <label for="idadeFamiliarInput_${numeroDeFamiliares}" class="form-label fw-bold">IDADE</label>
+            </div>                                                              
+            <div class="col-md-2">
+              <label for="parentescoFamiliarInput_${numeroDeFamiliares}" class="form-label fw-bold">PARENTESCO</label>
+            </div>                                                                          
+            <div class="col-md-3">
+              <label for="problemasSaudeFamiliarSelect_${numeroDeFamiliares}" class="form-label fw-bold">PROBLEMAS DE SAÚDE</label>
+            </div>            
+          </div>    
+      
+          <div class="row">            
+            <div class="col-md-5">
+              <input type="text" class="form-control" id="nomeFamiliarInput_${numeroDeFamiliares}">
+            </div>              
+            <div class="col-md-1">
+              <input type="text" class="form-control" id="idadeFamiliarInput_${numeroDeFamiliares}">
+            </div>              
+            <div class="col-md-2">
+              <input type="text" class="form-control" id="parentescoFamiliarInput_${numeroDeFamiliares}">
+            </div>                          
+            <div class="col-md-3">          
+              <select class="form-select" id="problemasSaudeFamiliarSelect_${numeroDeFamiliares}">
+                <?!= gerarSelect( BUFFER_QUANTIDADE_PROBLEMAS_DE_SAUDE ); ?>
+              </select>
+            </div>                         
+          </div>                  
+        </div>        
+        <!-- Familiar 1 - Fim -->    
+
+    `;
+
+     document.getElementById("familiares").innerHTML += familiar;
 
 
   } // Fim da função adicionarFamiliar
